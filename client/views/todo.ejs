@@ -1,0 +1,31 @@
+<% layout('layout') %>
+
+<body ng-controller="TodoCtrl">
+    <div class="container">
+        <div class="jumbotron text-center" style="padding-bottom:2px;">
+            <h1 style="padding:40px; padding-top:66px;">Remplir votre todolist <span class="label label-info">{{ getTotalList() }}</span></h1>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <div class="checkbox" ng-repeat="elem in list">
+                    <label>
+		     {{index}} {{ elem.text }} <a href="#" ng-click="removeElem($index)"><i class="fa fa-trash"></i></a>
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form>
+                    <div class="form-group">
+		      <input type="text" class="form-control input-lg text-center" placeholder="Write something here..." ng-model="formtext">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="addElem()">Ajouter</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
